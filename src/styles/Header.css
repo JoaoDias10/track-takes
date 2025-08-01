@@ -1,0 +1,20 @@
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.vinyl-icon {
+    animation: spin 4s linear infinite;
+    color: #ba68c8;
+    filter: drop-shadow(0 0 5px #ba68c8);
+}
+
+.music-note-icon {
+    color: #ba68c8;
+    filter: drop-shadow(0 0 3px #ba68c8);
+}
