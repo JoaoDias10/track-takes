@@ -1,44 +1,6 @@
 import { Box, Grid, Card, CardContent, Typography, Rating, CardMedia } from '@mui/material';
-import astroworldCover from '../assets/Astroworld.jpg';
-import rodeoCover from '../assets/Rodeo.webp';
+import { albums } from '../data/albums';
 
-const albums = [
-    {
-        title: 'ASTROWORLD',
-        author: 'Travis Scott',
-        rating: 4.8,
-        description: "Travis Scott's Astroworld is a 2018 hip-hop album inspired by the former Six Flags Astroworld amusement park in Houston, Texas. It blends trap, psychedelic, and experimental rap styles. The album is known for its maximalist production, diverse guest features, and immersive journey through various sonic textures.",
-        image: astroworldCover
-    },
-    {
-        title: 'Rodeo',
-        author: 'Travis Scott',
-        rating: 4.5,
-        description: "Travis Scott's debut studio album, Rodeo, released in 2015, is a concept album that thematically explores the rapper's journey from Houston to Los Angeles, symbolized by the wild and often dangerous rodeo of his newfound fame and lifestyle. The album delves into the internal conflict between his ambition and the temptations of a rockstar life, all while maintaining his Houston roots.",
-        image: rodeoCover
-    },
-    {
-        title: 'Rodeo',
-        author: 'Travis Scott',
-        rating: 4.5,
-        description: "Rodeo is Travis Scott's debut studio album, released in 2015. It features a blend of hip-hop, trap, and psychedelic influences, showcasing Scott's unique sound. The album includes hit singles like 'Antidote' and '3500', and is known for its cinematic production and guest appearances from artists like Kanye West and Justin Bieber.",
-        image: 'https://upload.wikimedia.org/wikipedia/en/2/2c/Travis_Scott_-_Rodeo.png'
-    },
-    {
-        title: 'Rodeo',
-        author: 'Travis Scott',
-        rating: 4.5,
-        description: "Rodeo is Travis Scott's debut studio album, released in 2015. It features a blend of hip-hop, trap, and psychedelic influences, showcasing Scott's unique sound. The album includes hit singles like 'Antidote' and '3500', and is known for its cinematic production and guest appearances from artists like Kanye West and Justin Bieber.",
-        image: 'https://upload.wikimedia.org/wikipedia/en/2/2c/Travis_Scott_-_Rodeo.png'
-    },
-    {
-        title: 'Rodeo',
-        author: 'Travis Scott',
-        rating: 4.5,
-        description: "Rodeo is Travis Scott's debut studio album, released in 2015. It features a blend of hip-hop, trap, and psychedelic influences, showcasing Scott's unique sound. The album includes hit singles like 'Antidote' and '3500', and is known for its cinematic production and guest appearances from artists like Kanye West and Justin Bieber.",
-        image: 'https://upload.wikimedia.org/wikipedia/en/2/2c/Travis_Scott_-_Rodeo.png'
-    },
-];
 
 export default function Albums() {
     return (
