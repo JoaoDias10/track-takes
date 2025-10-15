@@ -36,6 +36,7 @@ Built with a modern, dark-themed UI, it brings together clean visuals and organi
 
 ## 🗂️ Folder Structure
 
+```
 src/
 ├── assets/ # Images for artists, albums, and genres
 ├── components/ # Reusable UI elements (Header, NavCard, etc.)
@@ -45,3 +46,4 @@ src/
 ├── routes/ # AppRoutes configuration
 ├── styles/ # Global styles and themes
 └── App.jsx # Root component
+```
