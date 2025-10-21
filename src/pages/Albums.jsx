@@ -1,14 +1,53 @@
-import { Box, Grid, Card, CardContent, Typography, Rating, CardMedia } from '@mui/material';
+import { useState } from 'react';
+import { Box, Grid, Card, CardContent, Typography, Rating, CardMedia, TextField } from '@mui/material';
 import { albums } from '../data/albums';
 import { Link } from 'react-router-dom';
 
 export default function Albums() {
-    const sortedAlbums = [...albums].sort((a, b) => a.title.localeCompare(b.title));
+    const [searchTerm, setSearchTerm] = useState('');
+
+    // Filter and sort albums
+    const filteredAlbums = albums
+        .filter(album => album.title.toLowerCase().includes(searchTerm.toLowerCase()))
+        .sort((a, b) => a.title.localeCompare(b.title));
 
     return (
-        <Box sx={{ backgroundColor: '#2a2a3d', minHeight: '100vh', padding: '3rem' }}>
+        <Box sx={{ backgroundColor: '#2a2a3d', minHeight: '100vh', padding: '1rem 3rem' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 2 }}>
+                <TextField
+                    variant="outlined"
+                    placeholder="Search albums..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    sx={{
+                        width: 300,
+                        backgroundColor: '#1e1e2f',
+                        borderRadius: '8px',
+                        input: {
+                            color: '#fff',
+                            padding: '8px 12px', // ⬅️ reduce vertical padding
+                            fontSize: '0.95rem', // ⬅️ slightly smaller text
+                        },
+                        '& .MuiOutlinedInput-root': {
+                            height: '45px', // ⬅️ total component height
+                            '& fieldset': { borderColor: '#ba68c8' },
+                            '&:hover fieldset': { borderColor: '#ab47bc' },
+                            '&.Mui-focused fieldset': { borderColor: '#ba68c8' },
+                        },
+                        '& .MuiInputBase-input::placeholder': {
+                            color: '#bbb',
+                        },
+                    }}
+                    InputProps={{
+                        sx: { color: '#fff' },
+                    }}
+                />
+
+            </Box>
+
+            {/* 🎵 Albums Grid */}
             <Grid container spacing={4} alignItems="flex-start">
-                {sortedAlbums.map((album, index) => (
+                {filteredAlbums.map((album, index) => (
                     <Grid item key={index} xs={12} sm={6} md={4}>
                         <Link
                             to={`/albums/${album.slug}`}
@@ -69,6 +108,21 @@ export default function Albums() {
                         </Link>
                     </Grid>
                 ))}
+
+                {/* 🚫 No results message */}
+                {filteredAlbums.length === 0 && (
+                    <Typography
+                        variant="h6"
+                        sx={{
+                            color: '#ccc',
+                            textAlign: 'center',
+                            width: '100%',
+                            mt: 4,
+                        }}
+                    >
+                        No albums found.
+                    </Typography>
+                )}
             </Grid>
         </Box>
     );

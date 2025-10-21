@@ -1,4 +1,7 @@
 import { Route, Routes } from "react-router-dom";
+
+import LoginRegister from "../auth/LoginRegister";
+
 import Home from "../pages/Home";
 import Albums from "../pages/Albums";
 import AlbumDetails from "../pages/AlbumDetails";
@@ -15,8 +18,11 @@ import Genres from "../pages/Genres";
 
 const AppRoutes = () => (
     <Routes>
+        {/* Login */}
+        <Route path="/home" element={<Home />} />
+
         {/* Home */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<LoginRegister />} />
 
         {/* Albums */}
         <Route path="albums">
